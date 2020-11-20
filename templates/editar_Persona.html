@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block titulo %} Formulario de contenido {% endblock titulo %}
+{% block cuerpo %}  
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="col-md-4 offset-md-4">
+  <div class="card card-body">
+  <p class="text-center">Editar</p>
+  <form action= "/update/{{contact.0}}" method="POST">
+   <div class="form-group">
+    <input type="text" name="nombre" placeholder="nombre" value="{{ persona.nombre }}" class="form-control">
+   </div>
+   <div class="form-group">
+     <input type="text" name="apellido" placeholder="Phone" value="{{ pesona.apellido }}" class="form-control">
+   </div>
+   <div class="form-group">
+     <input type="text" name="correo" placeholder="Correo" value="{{ persona.correo }}" class="form-control"> 
+   </div>
+   <div class="form-group">
+   <button type = "submit" class="btn btn-success btn-block">
+    Editar
+   </button>
+   </div>
+   
+  </form>
+
+{% endblock cuerpo %}
